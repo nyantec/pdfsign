@@ -10,6 +10,7 @@ import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.util.Arrays;
 
+/* TODO: Handle exceptions */
 public class PdfSign {
 	public static void main(String[] arg) throws Exception {
 		/* Read password from standard input */
