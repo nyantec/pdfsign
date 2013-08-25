@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.security.cert.Certificate;
 import java.security.KeyStore;
 import java.security.PrivateKey;
+import java.util.Arrays;
 
 public class PdfSign {
 	public static void main(String[] arg) throws Exception {
@@ -23,6 +24,9 @@ public class PdfSign {
 		String alias = store.aliases().nextElement();
 		PrivateKey key = (PrivateKey) store.getKey(alias, password);
 		Certificate[] chain = store.getCertificateChain(alias);
+
+		/* Overwrite password */
+		Arrays.fill(password, '\0');
 
 		/* Open input file */
 		File input = new File(arg[1]);
